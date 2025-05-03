@@ -139,7 +139,7 @@ impl<USB: UsbPeripheral> UsbBus<USB> {
         }
     }
 
-    pub fn force_reset(&self, delay: &mut impl DelayMs<u32>) -> Result<()> {
+    pub fn force_reset(&self, delay: &mut impl DelayNs<u32>) -> Result<()> {
         critical_section::with(|cs| {
             let regs = self.regs.borrow(cs);
             write_reg!(otg_device, regs.device(), DCTL, SDIS: 1); // Soft disconnect
