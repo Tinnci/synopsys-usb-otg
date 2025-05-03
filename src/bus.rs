@@ -4,7 +4,7 @@ use crate::ral::{
 use crate::transition::{EndpointConfig, EndpointDescriptor};
 use core::marker::PhantomData;
 use critical_section::{CriticalSection, Mutex};
-use embedded_hal::blocking::delay::DelayMs;
+use embedded_hal::blocking::delay::DelayNs;
 use usb_device::bus::{PollResult, UsbBusAllocator};
 use usb_device::endpoint::{EndpointAddress, EndpointType};
 use usb_device::{Result, UsbDirection, UsbError};
